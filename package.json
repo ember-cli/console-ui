@@ -12,7 +12,7 @@
   "name": "console-ui",
   "description": "common interface for abstracting a console ui",
   "version": "1.0.1",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha tests/**/*-test.js",
     "test:debug": "mocha debug tests/**/*-test.js"
