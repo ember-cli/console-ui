@@ -26,5 +26,10 @@
   "bugs": {
     "url": "https://github.com/ember-cli/console-ui/issues"
   },
-  "homepage": "https://github.com/ember-cli/console-ui#readme"
+  "homepage": "https://github.com/ember-cli/console-ui#readme",
+  "greenkeeper": {
+    "ignore": [
+      "ora"
+    ]
+  }
 }
