@@ -23,7 +23,7 @@ Features:
 ## Usage
 
 ```js
-var UI = require('command-ui')
+var UI = require('console-ui')
 var ui = new UI({
   inputStream: process.stdin,
   outputStream: process.stdout,
