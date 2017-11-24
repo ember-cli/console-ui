@@ -31,13 +31,12 @@ describe('writeError', function() {
   });
 
   it('error with stack', function() {
-    ui.setWriteLevel('DEBUG')
     writeError(ui, new BuildError({
       stack: 'the stack'
     }));
 
-    expect(ui.output).to.equal(chalk.red('the stack') + EOL);
-    ui.setWriteLevel('INFO');
+    expect(ui.output).to.equal('');
+    expect(ui.errors).to.equal(chalk.red('Error') + EOL + EOL + 'the stack' + EOL);
   });
 
   it('error with file', function() {
