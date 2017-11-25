@@ -1,12 +1,13 @@
 'use strict';
 
-var expect = require('chai').expect;
-var MockUI = require('../../lib/mock');
-var EOL    = require('os').EOL;
-var chalk  = require('chalk');
+const expect = require('chai').expect;
+const MockUI = require('../../lib/mock');
+const EOL    = require('os').EOL;
+const chalk  = require('chalk');
+const fs     = require('fs');
 
 describe('UI', function() {
-  var ui;
+  let ui;
 
   beforeEach(function() {
     ui = new MockUI();
@@ -80,6 +81,44 @@ describe('UI', function() {
     it('returns the original data when prepend is falsy (but not undefined)', function() {
       var result = ui.prependLine('foo', 'bar', false);
       expect(result).to.equal('bar');
+    });
+  });
+
+  describe('writeError', function() {
+
+    function errorLogToReportPath(log) {
+      return log.match(/([^\s]+error\.dump\.\w+\.log)/)[0];
+    }
+
+    it('empty error', function() {
+      ui.writeError({});
+      expect(ui.output).to.eql('');
+      expect(ui.errors).to.contain('[object Object]');
+      expect(ui.errors).to.contain('Stack Trace and Error Report');
+      expect(ui.errors).to.contain('error\.dump\.');
+      expect(ui.errorLog).to.deep.eql([]);
+
+      const filepath = errorLogToReportPath(ui.errors);
+      const report = fs.readFileSync(filepath, 'UTF8')
+
+      expect(report).to.contain('ENV Summary:');
+      expect(report).to.contain('ERROR Summary:');
+    });
+
+    it('real error', function() {
+      ui.writeError(new Error('I AM ERROR MESSAGE'));
+      expect(ui.output).to.eql('');
+      expect(ui.errors).to.contain('I AM ERROR MESSAGE');
+      expect(ui.errors).to.contain('Stack Trace and Error Report');
+      expect(ui.errors).to.contain('error\.dump\.');
+      expect(ui.errorLog).to.deep.eql([]);
+
+      const filepath = errorLogToReportPath(ui.errors);
+      const report = fs.readFileSync(filepath, 'UTF8')
+
+      expect(report).to.contain('ENV Summary:');
+      expect(report).to.contain('ERROR Summary:');
+      expect(report).to.contain('I AM ERROR MESSAGE');
     });
   });
 });
