@@ -28,7 +28,7 @@ describe('summarizeProcess', function() {
     expect(summary.shift()).to.match(/^  PLATFORM: (.*)\s(.*)$/);
     expect(summary.shift()).to.match(/^  FREEMEM: \d+$/);
     expect(summary.shift()).to.match(/^  TOTALMEM: \d+$/);
-    expect(summary.shift()).to.match(/^  UPTIME: \d+$/);
+    expect(summary.shift()).to.match(/^  UPTIME: \d+(\.\d+)?$/);
     expect(summary.shift()).to.match(/^  LOADAVG: \d+.\d+,\d+.\d+,\d+.\d+$/);
     expect(summary.shift()).to.match(/^  CPUS:$/);
 
@@ -65,7 +65,7 @@ describe('summarizeProcess', function() {
     expect(summary.shift()).to.match(/^  PLATFORM:  $/);
     expect(summary.shift()).to.match(/^  FREEMEM: \d+$/);
     expect(summary.shift()).to.match(/^  TOTALMEM: \d+$/);
-    expect(summary.shift()).to.match(/^  UPTIME: \d+$/);
+    expect(summary.shift()).to.match(/^  UPTIME: \d+(\.\d+)?$/);
     expect(summary.shift()).to.match(/^  LOADAVG: \d+.\d+,\d+.\d+,\d+.\d+$/);
     expect(summary.shift()).to.match(/^  CPUS:$/);
 
@@ -98,7 +98,7 @@ describe('summarizeProcess', function() {
     expect(summary.shift()).to.match(/^  PLATFORM: the-plat the-arc$/);
     expect(summary.shift()).to.match(/^  FREEMEM: \d+$/);
     expect(summary.shift()).to.match(/^  TOTALMEM: \d+$/);
-    expect(summary.shift()).to.match(/^  UPTIME: \d+$/);
+    expect(summary.shift()).to.match(/^  UPTIME: \d+(\.\d+)?$/);
     expect(summary.shift()).to.match(/^  LOADAVG: \d+.\d+,\d+.\d+,\d+.\d+$/);
     expect(summary.shift()).to.match(/^  CPUS:$/);
 
@@ -136,7 +136,7 @@ describe('summarizeProcess', function() {
 
     expect(summary.shift()).to.match(/^  FREEMEM: \d+$/);
     expect(summary.shift()).to.match(/^  TOTALMEM: \d+$/);
-    expect(summary.shift()).to.match(/^  UPTIME: \d+$/);
+    expect(summary.shift()).to.match(/^  UPTIME: \d+(\.\d+)?$/);
     expect(summary.shift()).to.match(/^  LOADAVG: \d+.\d+,\d+.\d+,\d+.\d+$/);
     expect(summary.shift()).to.match(/^  CPUS:$/);
 
@@ -178,7 +178,7 @@ describe('summarizeProcess', function() {
     expect(summary.shift()).to.match(/^  PLATFORM:  $/);
     expect(summary.shift()).to.match(/^  FREEMEM: \d+$/);
     expect(summary.shift()).to.match(/^  TOTALMEM: \d+$/);
-    expect(summary.shift()).to.match(/^  UPTIME: \d+$/);
+    expect(summary.shift()).to.match(/^  UPTIME: \d+(\.\d+)?$/);
     expect(summary.shift()).to.match(/^  LOADAVG: \d+.\d+,\d+.\d+,\d+.\d+$/);
     expect(summary.shift()).to.match(/^  CPUS:$/);
 
