@@ -43,7 +43,7 @@ describe('writeError', function() {
       stack: 'the stack'
     }));
 
-    expect(ui.output).to.equal('the stack\n');
+    expect(ui.output).to.equal('the stack' + EOL);
     expect(ui.errors).to.equal(chalk.red('Error') + EOL + EOL);
     expect(report).to.contain('message: [undefined]');
     expect(report).to.contain('stack: the stack');
