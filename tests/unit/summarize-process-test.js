@@ -29,7 +29,7 @@ describe('summarizeProcess', function() {
     expect(summary.shift()).to.match(/^  FREEMEM: \d+$/);
     expect(summary.shift()).to.match(/^  TOTALMEM: \d+$/);
     expect(summary.shift()).to.match(/^  UPTIME: \d+(\.\d+)?$/);
-    expect(summary.shift()).to.match(/^  LOADAVG: \d+.\d+,\d+.\d+,\d+.\d+$/);
+    expect(summary.shift()).to.match(/^  LOADAVG: \d+(\.\d+)?,\d+(\.\d+)?,\d+(\.\d+)?$/);
     expect(summary.shift()).to.match(/^  CPUS:$/);
 
     for (let i = 0; i < require('os').cpus().length; i++) {
@@ -66,7 +66,7 @@ describe('summarizeProcess', function() {
     expect(summary.shift()).to.match(/^  FREEMEM: \d+$/);
     expect(summary.shift()).to.match(/^  TOTALMEM: \d+$/);
     expect(summary.shift()).to.match(/^  UPTIME: \d+(\.\d+)?$/);
-    expect(summary.shift()).to.match(/^  LOADAVG: \d+.\d+,\d+.\d+,\d+.\d+$/);
+    expect(summary.shift()).to.match(/^  LOADAVG: \d+(\.\d+)?,\d+(\.\d+)?,\d+(\.\d+)?$/);
     expect(summary.shift()).to.match(/^  CPUS:$/);
 
     for (let i = 0; i < require('os').cpus().length; i++) {
@@ -99,7 +99,7 @@ describe('summarizeProcess', function() {
     expect(summary.shift()).to.match(/^  FREEMEM: \d+$/);
     expect(summary.shift()).to.match(/^  TOTALMEM: \d+$/);
     expect(summary.shift()).to.match(/^  UPTIME: \d+(\.\d+)?$/);
-    expect(summary.shift()).to.match(/^  LOADAVG: \d+.\d+,\d+.\d+,\d+.\d+$/);
+    expect(summary.shift()).to.match(/^  LOADAVG: \d+(\.\d+)?,\d+(\.\d+)?,\d+(\.\d+)?$/);
     expect(summary.shift()).to.match(/^  CPUS:$/);
 
     for (let i = 0; i < require('os').cpus().length; i++) {
@@ -137,7 +137,7 @@ describe('summarizeProcess', function() {
     expect(summary.shift()).to.match(/^  FREEMEM: \d+$/);
     expect(summary.shift()).to.match(/^  TOTALMEM: \d+$/);
     expect(summary.shift()).to.match(/^  UPTIME: \d+(\.\d+)?$/);
-    expect(summary.shift()).to.match(/^  LOADAVG: \d+.\d+,\d+.\d+,\d+.\d+$/);
+    expect(summary.shift()).to.match(/^  LOADAVG: \d+(\.\d+)?,\d+(\.\d+)?,\d+(\.\d+)?$/);
     expect(summary.shift()).to.match(/^  CPUS:$/);
 
     for (let i = 0; i < require('os').cpus().length; i++) {
@@ -179,8 +179,9 @@ describe('summarizeProcess', function() {
     expect(summary.shift()).to.match(/^  FREEMEM: \d+$/);
     expect(summary.shift()).to.match(/^  TOTALMEM: \d+$/);
     expect(summary.shift()).to.match(/^  UPTIME: \d+(\.\d+)?$/);
-    expect(summary.shift()).to.match(/^  LOADAVG: \d+.\d+,\d+.\d+,\d+.\d+$/);
+    expect(summary.shift()).to.match(/^  LOADAVG: \d+(\.\d+)?,\d+(\.\d+)?,\d+(\.\d+)?$/);
     expect(summary.shift()).to.match(/^  CPUS:$/);
+
 
     for (let i = 0; i < require('os').cpus().length; i++) {
       expect(summary.shift()).to.match(/^  - (.*)$/);
