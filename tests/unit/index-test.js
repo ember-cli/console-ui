@@ -120,5 +120,16 @@ describe('UI', function() {
       expect(report).to.contain('ERROR Summary:');
       expect(report).to.contain('I AM ERROR MESSAGE');
     });
+
+    it('SilentError', function() {
+      let e = new Error('I AM ERROR MESSAGE');
+      e.isSilentError = true;
+      ui.writeError(e);
+      expect(ui.output).to.eql('');
+      expect(ui.errors).to.contain('I AM ERROR MESSAGE');
+      expect(ui.errors).to.not.contain('Stack Trace and Error Report');
+      expect(ui.errors).to.not.contain('error\.dump\.');
+      expect(ui.errorLog).to.deep.eql([]);
+    });
   });
 });
