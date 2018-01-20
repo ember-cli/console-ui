@@ -85,6 +85,16 @@ describe('UI', function() {
   });
 
   describe('writeError', function() {
+    let originalCI;
+
+    beforeEach(function() {
+      originalCI = process.env.CI;
+      delete process.env.CI;
+    });
+
+    afterEach(function() {
+      process.env.CI = originalCI;
+    });
 
     function errorLogToReportPath(log) {
       return log.match(/([^\s]+error\.dump\.\w+\.log)/)[0];
