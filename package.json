@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "chalk": "^2.1.0",
-    "inquirer": "^5.0.0",
+    "inquirer": "^2",
     "json-stable-stringify": "^1.0.1",
     "ora": "^2.0.0",
     "through": "^2.3.8",
