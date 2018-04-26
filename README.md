@@ -3,10 +3,10 @@
 [![Build Status](https://travis-ci.org/ember-cli/console-ui.svg?branch=master)](https://travis-ci.org/ember-cli/console-ui)
 [![Build status](https://ci.appveyor.com/api/projects/status/38tkats2frmmxt2f/branch/master?svg=true)](https://ci.appveyor.com/project/embercli/console-ui/branch/master)
 
-The goal of this library, is to declare a common interface that various
-node_modules can utilize allowing there various UI interactions to be well
-coordinated and interopable. This repo provides a reference UI implementation,
-and a test mock implementation. In theory, an alternate implementation abiding
+The goal of this library is to declare a common interface that various
+node_modules can utilize allowing their UI interactions to be well
+coordinated and interoperable. This repo provides reference UI
+and test mock implementations. In theory, an alternate implementation abiding
 by the describe API could be provided, and the system and all participating
 libraries would continue to function correctly.
 
