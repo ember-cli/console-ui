@@ -1,7 +1,7 @@
 # console-ui
 
 [![Build Status](https://travis-ci.org/ember-cli/console-ui.svg?branch=master)](https://travis-ci.org/ember-cli/console-ui)
-[![Build status](https://ci.appveyor.com/api/projects/status/38tkats2frmmxt2f/branch/master?svg=true)](https://ci.appveyor.com/project/embercli/console-ui/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/38tkats2frmmxt2f/branch/master?svg=true)](https://ci.appveyor.com/project/embercli/console-ui/branch/master) [![Greenkeeper badge](https://badges.greenkeeper.io/ember-cli/console-ui.svg)](https://greenkeeper.io/)
 
 The goal of this library is to declare a common interface that various
 node_modules can utilize allowing their UI interactions to be well
