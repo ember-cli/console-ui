@@ -60,6 +60,17 @@ describe('writeError', function() {
     expect(report).to.contain('file: the file');
   });
 
+  it('error with code', function() {
+    let error = new Error();
+    error.code = 'the code';
+    let report = writeError(ui, error);
+
+    expect(ui.output).to.equal('');
+    expect(ui.errors).to.contain('Error');
+
+    expect(report).to.contain('code: the code');
+  });
+
   it('error with filename (as from Uglify)', function() {
     let report = writeError(ui, new BuildError({
       filename: 'the file'
