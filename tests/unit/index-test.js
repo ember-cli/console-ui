@@ -69,17 +69,17 @@ describe('UI', function() {
 
   describe('prependLine', function() {
     it('prepends the data when prepend is undefined', function() {
-      var result = ui.prependLine('foo', 'bar');
+      let result = ui.prependLine('foo', 'bar');
       expect(result).to.equal('foo: bar');
     });
 
     it('prepends the data when prepend is true', function() {
-      var result = ui.prependLine('foo', 'bar', true);
+      let result = ui.prependLine('foo', 'bar', true);
       expect(result).to.equal('foo: bar');
     });
 
     it('returns the original data when prepend is falsy (but not undefined)', function() {
-      var result = ui.prependLine('foo', 'bar', false);
+      let result = ui.prependLine('foo', 'bar', false);
       expect(result).to.equal('bar');
     });
   });
