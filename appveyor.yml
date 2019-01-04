@@ -14,20 +14,15 @@ install:
   - git rev-parse HEAD
   # Get the latest stable version of Node 0.STABLE.latest
   - ps: Install-Product node $env:nodejs_version
-  # Install PhantomJS
-  - npm install mocha-appveyor-reporter
-  # Typical npm stuff.
-  - npm version
-  - npm install
+  - appveyor-retry yarn
+  - appveyor-retry yarn add mocha-appveyor-reporter # must be installed locally.
 
 cache:
-  - '%APPDATA%\npm-cache'
+  - '%LOCALAPPDATA%\Yarn'
 
 # Post-install test scripts.
 test_script:
-  # Output useful info for debugging.
-  - npm version
-  - cmd: npm run test
+  - cmd: yarn test
 
 # Don't actually build.
 build: off
