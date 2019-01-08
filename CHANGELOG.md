@@ -1,3 +1,19 @@
+## v3.0.0 (2019-01-08)
+
+#### :boom: Breaking Change
+* [#51](https://github.com/ember-cli/console-ui/pull/51) chore(ci): Drop Node 4 support. ([@rwjblue](https://github.com/rwjblue))
+
+#### :rocket: Enhancement
+* [#56](https://github.com/ember-cli/console-ui/pull/56) Add lerna-changelog for changelog generation. ([@rwjblue](https://github.com/rwjblue))
+
+#### :house: Internal
+* [#54](https://github.com/ember-cli/console-ui/pull/54) chore(ci): Migrate to using Yarn. ([@rwjblue](https://github.com/rwjblue))
+* [#53](https://github.com/ember-cli/console-ui/pull/53) chore(ES6): Refactor to ES Classes ([@rwjblue](https://github.com/rwjblue))
+* [#52](https://github.com/ember-cli/console-ui/pull/52) chore(deps): Remove user-info dependency. ([@rwjblue](https://github.com/rwjblue))
+
+#### Committers: 1
+- Robert Jackson ([@rwjblue](https://github.com/rwjblue))
+
 ## v2.2.3 (2019-01-04)
 
 #### :rocket: Enhancement
