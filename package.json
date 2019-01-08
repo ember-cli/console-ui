@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "chalk": "^2.1.0",
-    "inquirer": "^2",
+    "inquirer": "^6",
     "json-stable-stringify": "^1.0.1",
     "ora": "^3.0.0",
     "through": "^2.3.8"
