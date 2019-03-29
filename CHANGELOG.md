@@ -1,3 +1,11 @@
+##  v3.0.1 (2019-03-29)
+
+#### :rocket: Enhancement
+* [#65](https://github.com/ember-cli/console-ui/pull/65) [feature] use through2 instead of through ([@gabrielcsapo](https://github.com/gabrielcsapo))
+
+#### Committers: 1
+- Gabriel Csapo ([@gabrielcsapo](https://github.com/gabrielcsapo))
+
 ## v3.0.0 (2019-01-08)
 
 #### :boom: Breaking Change
