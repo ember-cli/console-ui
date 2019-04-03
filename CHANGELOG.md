@@ -1,3 +1,11 @@
+## v3.0.2 (2019-04-03)
+
+#### :bug: Bug Fix
+* [#68](https://github.com/ember-cli/console-ui/pull/68) [fix] fixes an issue with through2 not returning the stream by calling async callback ([@gabrielcsapo](https://github.com/gabrielcsapo))
+
+#### Committers: 1
+- Gabriel Csapo ([@gabrielcsapo](https://github.com/gabrielcsapo))
+
 ##  v3.0.1 (2019-03-29)
 
 #### :rocket: Enhancement
