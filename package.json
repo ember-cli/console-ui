@@ -1,6 +1,6 @@
 {
   "name": "console-ui",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "common interface for abstracting a console ui",
   "homepage": "https://github.com/ember-cli/console-ui#readme",
   "bugs": {
