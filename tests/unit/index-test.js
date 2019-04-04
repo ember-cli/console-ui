@@ -6,6 +6,10 @@ const EOL    = require('os').EOL;
 const chalk  = require('chalk');
 const fs     = require('fs');
 
+function errorLogToReportPath(log) {
+  return log.match(/([^\s]+error\.dump\.\w+\.log)/)[0];
+}
+
 describe('UI', function() {
   let ui;
 
@@ -95,10 +99,6 @@ describe('UI', function() {
     afterEach(function() {
       process.env.CI = originalCI;
     });
-
-    function errorLogToReportPath(log) {
-      return log.match(/([^\s]+error\.dump\.\w+\.log)/)[0];
-    }
 
     it('empty error', function() {
       ui.writeError({});
