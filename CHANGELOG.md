@@ -1,3 +1,13 @@
+## Unreleased (2019-05-02)
+
+## v3.0.3 (2019-05-02)
+
+#### :bug: Bug Fix
+* [#75](https://github.com/ember-cli/console-ui/pull/75) Ensure we resume an active spinner after we write or writeLine ([@stefanpenner](https://github.com/stefanpenner))
+
+#### Committers: 1
+- Stefan Penner ([@stefanpenner](https://github.com/stefanpenner))
+
 ## v3.0.2 (2019-04-03)
 
 #### :bug: Bug Fix
