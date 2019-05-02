@@ -1,5 +1,12 @@
 ## Unreleased (2019-05-02)
 
+
+## v3.0.4 (2019-05-02)
+
+#### :bug: Bug Fix
+
+* Fix spinner toggling
+
 ## v3.0.3 (2019-05-02)
 
 #### :bug: Bug Fix
