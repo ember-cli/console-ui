@@ -48,6 +48,12 @@ ui.writeLine('message');
 ui.writeLine('message', 'ERROR'); // specify  writelevel
 ```
 
+write + newline to stderr;
+
+```js
+ui.writeErrorLine('message');
+```
+
 write with DEBUG writeLevel
 
 ```js

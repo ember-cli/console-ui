@@ -17,6 +17,28 @@ describe('UI', function() {
     ui = new MockUI();
   });
 
+  describe('writeLine', function() {
+    it('writes normally', function() {
+      ui.writeLine('foo');
+      expect(ui.output).to.equal('foo' + EOL);
+    });
+
+    it('writes in the correct chalk', function() {
+      const message = chalk.gray('foo')
+      ui.writeLine(message);
+      expect(ui.output).to.equal(message + EOL);
+    });
+  });
+
+
+  describe('writeErrorLine', function() {
+    it('writes to error line', function() {
+      ui.writeErrorLine('foo');
+      expect(ui.output).to.equal('');
+      expect(ui.errors).to.equal('foo' + EOL);
+    });
+  });
+
   describe('writeDebugLine', function() {
     it('does not write at the default level', function() {
       ui.writeDebugLine('foo');
