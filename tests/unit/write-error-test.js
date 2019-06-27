@@ -240,4 +240,13 @@ describe('writeError', function() {
     expect(report).to.contain('codeFrame');
     expect(report).to.contain('broccoli error message');
   });
+
+  it('error with no payload', function() {
+    writeError(ui, new BuildError({
+      broccoliPayload: {},
+    }));
+
+    expect(ui.output).to.equal('');
+    expect(ui.errors).to.equal(chalk.red('Error') + EOL + EOL);
+  });
 });
