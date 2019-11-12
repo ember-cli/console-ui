@@ -19,7 +19,7 @@
     "test:debug": "mocha debug tests/**/*-test.js"
   },
   "dependencies": {
-    "chalk": "^2.1.0",
+    "chalk": "^3.0.0",
     "inquirer": "^6",
     "json-stable-stringify": "^1.0.1",
     "ora": "^3.4.0",
