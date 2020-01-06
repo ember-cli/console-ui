@@ -28,7 +28,7 @@
   "devDependencies": {
     "chai": "^4.1.1",
     "lerna-changelog": "^0.8.3",
-    "mocha": "^6.2.2"
+    "mocha": "^7.0.0"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
