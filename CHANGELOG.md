@@ -1,3 +1,12 @@
+## v3.1.2 (2020-11-03)
+
+#### :bug: Bug Fix
+* [#125](https://github.com/ember-cli/console-ui/pull/125) Spinner should respect errorStream option ([@ef4](https://github.com/ef4))
+
+#### Committers: 1
+- Edward Faulkner ([@ef4](https://github.com/ef4))
+
+
 ## v3.1.1 (2019-06-27)
 
 #### :bug: Bug Fix
