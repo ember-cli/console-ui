@@ -1,4 +1,19 @@
-## Unreleased (2019-05-02)
+## v3.1.1 (2019-06-27)
+
+#### :bug: Bug Fix
+* [#80](https://github.com/ember-cli/console-ui/pull/80) Fix `TypeError: Cannot read property stack of undefined` ([@astronomersiva](https://github.com/astronomersiva))
+
+#### Committers: 1
+- Sivasubramanyam A ([@astronomersiva](https://github.com/astronomersiva))
+
+
+## v3.1.0 (2019-06-10)
+
+#### :rocket: Enhancement
+* [#77](https://github.com/ember-cli/console-ui/pull/77) add ui.writeErrorLine ([@stefanpenner](https://github.com/stefanpenner))
+
+#### Committers: 1
+- Stefan Penner ([@stefanpenner](https://github.com/stefanpenner))
 
 
 ## v3.0.4 (2019-05-02)
