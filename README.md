@@ -33,6 +33,12 @@ const ui = new UI({
 });
 ```
 
+available write levels:
+* DEBUG (outputStream)
+* INFO (outputStream)
+* WARNING (errorStream)
+* ERROR (errorStream)
+
 write to output:
 
 ```js
