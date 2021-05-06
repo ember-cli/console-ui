@@ -62,34 +62,46 @@ describe('UI', function() {
   describe('writeWarningLine', function() {
     it('does not write when the test is truthy', function() {
       ui.writeWarnLine('foo', true);
-      expect(ui.output).to.equal('');
+      expect(ui.errors).to.equal('');
     });
 
     it('writes a prepended message when the test is falsy', function() {
       ui.writeWarnLine('foo', false);
-      expect(ui.output).to.equal(chalk.yellow('WARNING: foo') + EOL);
+      expect(ui.errors).to.equal(chalk.yellow('WARNING: foo') + EOL);
     });
 
     it('writes an un-prepended message if prepend is false', function() {
       ui.writeWarnLine('foo', false, false);
-      expect(ui.output).to.equal(chalk.yellow('foo') + EOL);
+      expect(ui.errors).to.equal(chalk.yellow('foo') + EOL);
+    });
+
+    it('writes to errorStream', function() {
+      ui.writeWarnLine('foo', false, false);
+      expect(ui.output).to.be.empty;
+      expect(ui.errors).to.equal(chalk.yellow('foo') + EOL);
     });
   });
 
   describe('writeDeprecateLine', function() {
     it('does not write when the test is truthy', function() {
       ui.writeDeprecateLine('foo', true);
-      expect(ui.output).to.equal('');
+      expect(ui.errors).to.equal('');
     });
 
     it('writes a prepended message when the test is falsy', function() {
       ui.writeDeprecateLine('foo', false);
-      expect(ui.output).to.equal(chalk.yellow('DEPRECATION: foo') + EOL);
+      expect(ui.errors).to.equal(chalk.yellow('DEPRECATION: foo') + EOL);
     });
 
     it('writes an un-prepended message if prepend is false', function() {
       ui.writeDeprecateLine('foo', false, false);
-      expect(ui.output).to.equal(chalk.yellow('foo') + EOL);
+      expect(ui.errors).to.equal(chalk.yellow('foo') + EOL);
+    });
+
+    it('writes to errorStream', function() {
+      ui.writeDeprecateLine('foo', false, false);
+      expect(ui.output).to.be.empty;
+      expect(ui.errors).to.equal(chalk.yellow('foo') + EOL);
     });
   });
 
