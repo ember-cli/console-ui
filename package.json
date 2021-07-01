@@ -22,7 +22,7 @@
     "chalk": "^2.1.0",
     "inquirer": "^6",
     "json-stable-stringify": "^1.0.1",
-    "ora": "^3.4.0",
+    "ora": "^5.4.1",
     "through2": "^3.0.1"
   },
   "devDependencies": {
