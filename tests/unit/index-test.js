@@ -128,6 +128,8 @@ describe('UI', function() {
     beforeEach(function() {
       originalCI = process.env.CI;
       delete process.env.CI;
+      // Create new ui object since we setup this.ci once in the constructor
+      ui = new MockUI();
     });
 
     afterEach(function() {
@@ -174,6 +176,35 @@ describe('UI', function() {
       expect(ui.errors).to.not.contain('Stack Trace and Error Report');
       expect(ui.errors).to.not.contain('error\.dump\.');
       expect(ui.errorLog).to.deep.eql([]);
+    });
+
+    it('respects options.ci over process.env.CI if set', function() {
+      process.env.CI = true;
+      let ciUI = new MockUI({
+        ci: false
+      });
+
+      ciUI.writeError(new Error('I AM ERROR MESSAGE'));
+      expect(ciUI.output).to.eql('');
+      expect(ciUI.errors).to.contain('I AM ERROR MESSAGE');
+      expect(ciUI.errors).to.contain('Stack Trace and Error Report');
+      expect(ciUI.errors).to.contain('error\.dump\.');
+
+      const filepath = errorLogToReportPath(ciUI.errors);
+      const report = fs.readFileSync(filepath, 'UTF8')
+
+      expect(report).to.contain('ENV Summary:');
+      expect(report).to.contain('ERROR Summary:');
+      expect(report).to.contain('I AM ERROR MESSAGE');
+
+      delete process.env.CI;
+      ciUI = new MockUI({
+        ci: true
+      });
+      ciUI.writeError(new Error('I AM ERROR MESSAGE'));
+      expect(ciUI.output).to.eql('');
+      expect(ciUI.errors).to.contain('I AM ERROR MESSAGE');
+      expect(ciUI.errors).to.not.contain('Stack Trace and Error Report');
     });
   });
 });
